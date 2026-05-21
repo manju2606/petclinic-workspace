@@ -1,6 +1,8 @@
 [submodule "petclinic-platform"]
 	path = petclinic-platform
 	url = https://github.com/manju2606/petclinic-platform.git
+	branch = main
 [submodule "spring-petclinic-microservices"]
 	path = spring-petclinic-microservices
 	url = https://github.com/manju2606/spring-petclinic-microservices.git
+	branch = main

@@ -6,8 +6,12 @@ Monorepo workspace for the Spring Petclinic Microservices project on AWS. Contai
 
 | Submodule | Description |
 |-----------|-------------|
-| [`petclinic-platform`](petclinic-platform/) | AWS infrastructure — Terraform, Helm, Kubernetes manifests, ArgoCD, CI/CD pipelines |
-| [`spring-petclinic-microservices`](spring-petclinic-microservices/) | Spring Boot 4 / Spring Cloud application — 8 microservices (read-only reference) |
+| [`petclinic-platform`](https://github.com/manju2606/petclinic-platform) | AWS infrastructure — Terraform, Helm, Kubernetes manifests, ArgoCD, CI/CD pipelines |
+| [`spring-petclinic-microservices`](https://github.com/manju2606/spring-petclinic-microservices) | Spring Boot 4 / Spring Cloud application — 8 microservices (read-only reference) |
+
+## Contributing
+
+All infrastructure work happens in [`petclinic-platform`](https://github.com/manju2606/petclinic-platform). Open issues and PRs there. `spring-petclinic-microservices` is a read-only fork — upstream changes are pulled in by updating the submodule pointer.
 
 ## Getting Started
 
