@@ -13,6 +13,14 @@ This workspace contains two repositories with distinct roles:
 
 **All infrastructure work happens in `petclinic-platform/`.** See `petclinic-platform/CLAUDE.md` for the complete infrastructure conventions, safety hooks, MCP servers, and Jira backlog.
 
+Both directories are git submodules. To pull the latest commits from their remotes:
+
+```bash
+git submodule update --remote --merge
+```
+
+GitHub: https://github.com/manju2606/petclinic-workspace
+
 ## Application Overview (`spring-petclinic-microservices/`)
 
 Spring Boot 4.0.1 / Spring Cloud 2025.1.0 (Oakwood) / Java 17 multi-module Maven project. Eight services communicate via Eureka service discovery; config is centralized in config-server backed by a Git repo.
@@ -58,7 +66,7 @@ cd spring-petclinic-{service}
 docker compose up
 
 # Activate MySQL profile (for customers/visits/vets services)
-../mvnw spring-boot:run --spring.profiles.active=mysql
+../mvnw spring-boot:run -Dspring-boot.run.profiles=mysql
 
 # Recompile CSS (only needed when modifying .scss in api-gateway)
 cd spring-petclinic-api-gateway && ../mvnw generate-resources -P css
@@ -70,6 +78,7 @@ All commands run from `petclinic-platform/`. See `petclinic-platform/CLAUDE.md` 
 
 ```bash
 # Terraform workflow (always plan before apply)
+terraform init                  # required on first use or after module changes
 terraform fmt -recursive
 terraform validate
 terraform plan -out plan.out
